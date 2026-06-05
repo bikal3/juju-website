@@ -57,19 +57,16 @@ export default function ContactPage() {
               </p>
             </address>
 
-            {/* Map placeholder — replace with Google Maps iframe */}
-            <div className="bg-card-placeholder h-56 flex items-center justify-center rounded-sm">
-              <p className="text-text-secondary text-xs italic text-center px-6">
-                {/* Replace this div with:
-                  <iframe
-                    src="PASTE_GOOGLE_MAPS_EMBED_URL_HERE"
-                    width="100%" height="224" loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Hotel JuJu on Google Maps"
-                  />
-                */}
-                Google Maps embed — paste embed URL from Google Maps
-              </p>
+            <div className="rounded-sm overflow-hidden h-56">
+              <iframe
+                src="https://maps.google.com/maps?q=28.207289,83.9607528&z=17&output=embed"
+                width="100%"
+                height="224"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hotel JuJu on Google Maps"
+                className="border-0 w-full h-full"
+              />
             </div>
           </div>
 
