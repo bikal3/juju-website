@@ -33,11 +33,6 @@ jobs:
 
       - name: Build (static export)
         run: npm run build
-        env:
-          # GitHub Pages serves from /repo-name — this sets the basePath.
-          # When you switch to a custom domain (Cloudflare Pages), remove
-          # this env var and set NEXT_PUBLIC_BASE_PATH to nothing.
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
