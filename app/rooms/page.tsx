@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
 import { ROOMS, BOOKING_URL } from '@/lib/data'
+import { imgSrc } from '@/lib/base-path'
 
 export const metadata: Metadata = {
   title: 'Rooms — Hotel JuJu',
@@ -40,7 +41,7 @@ export default function RoomsPage() {
           >
             <div className="relative w-full md:w-1/2 min-h-[300px] rounded-sm overflow-hidden">
               <Image
-                src={room.imageSrc}
+                src={imgSrc(room.imageSrc)}
                 alt={room.imageAlt}
                 fill
                 className="object-cover"

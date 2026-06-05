@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { ReactNode } from 'react'
+import { imgSrc } from '@/lib/base-path'
 
 type HeroHeight = 'full' | 'medium' | 'short'
 
@@ -35,7 +36,7 @@ export default function HeroSection({
       {/* Background — real photo or gradient fallback */}
       {imageSrc ? (
         <Image
-          src={imageSrc}
+          src={imgSrc(imageSrc)}
           alt={imageAlt}
           fill
           className="object-cover"

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { imgSrc } from '@/lib/base-path'
 
 interface RoomCardProps {
   name: string
@@ -22,7 +23,7 @@ export default function RoomCard({
     <div className="bg-white shadow-md rounded-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
       <div className="relative h-48">
         <Image
-          src={imageSrc}
+          src={imgSrc(imageSrc)}
           alt={imageAlt}
           fill
           className="object-cover"
