@@ -16,6 +16,6 @@ describe('Footer', () => {
 
   it('renders copyright', () => {
     render(<Footer />)
-    expect(screen.getByText(/© 2025 Hotel JuJu/)).toBeInTheDocument()
+    expect(screen.getByText(new RegExp(`© ${new Date().getFullYear()} Hotel JuJu`))).toBeInTheDocument()
   })
 })

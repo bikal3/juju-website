@@ -71,6 +71,7 @@ export default function Nav() {
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           {menuOpen ? '✕' : '☰'}
         </button>
@@ -78,7 +79,7 @@ export default function Nav() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-5 flex flex-col gap-4">
+        <div id="mobile-menu" className="md:hidden px-6 pb-5 flex flex-col gap-4">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}

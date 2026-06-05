@@ -27,4 +27,14 @@ describe('HeroSection', () => {
     )
     expect(screen.getByRole('button', { name: 'Explore Rooms' })).toBeInTheDocument()
   })
+
+  it('applies full-height class by default', () => {
+    const { container } = render(<HeroSection title="Test" />)
+    expect(container.querySelector('section')).toHaveClass('min-h-screen')
+  })
+
+  it('applies medium height class when height="medium"', () => {
+    const { container } = render(<HeroSection title="Test" height="medium" />)
+    expect(container.querySelector('section')).toHaveClass('min-h-[60vh]')
+  })
 })

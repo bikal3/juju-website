@@ -43,6 +43,7 @@ export default function RoomCard({
           className="inline-block bg-gold text-cream text-xs tracking-widest uppercase px-5 py-2 hover:opacity-90 transition-opacity"
         >
           View Room
+          <span className="sr-only"> — {name}</span>
         </Link>
       </div>
     </div>

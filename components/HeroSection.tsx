@@ -27,11 +27,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative flex items-center justify-center text-center ${heightClasses[height]}`}
-      style={{
-        background:
-          'linear-gradient(135deg, #2C1810 0%, #5C3D1E 60%, #3a2510 100%)',
-      }}
+      className={`relative flex items-center justify-center text-center bg-hero-gradient ${heightClasses[height]}`}
     >
       {/* Placeholder label — remove when real photo is added */}
       <span

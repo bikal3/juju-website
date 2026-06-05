@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/10 py-4 text-center text-xs tracking-wide text-cream/40">
-        © 2025 Hotel JuJu. All rights reserved.
+        © {new Date().getFullYear()} Hotel JuJu. All rights reserved.
       </div>
     </footer>
   )
