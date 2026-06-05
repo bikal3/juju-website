@@ -86,7 +86,6 @@ export default function ContactPage() {
             <form
               action={`mailto:${HOTEL_CONTACT.email}`}
               method="POST"
-              encType="text/plain"
               className="space-y-4"
             >
               <div>

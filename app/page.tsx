@@ -96,6 +96,9 @@ export default function HomePage() {
           <p className="text-gold text-xs tracking-[3px] uppercase mb-3">
             Why Choose Us
           </p>
+          <h2 className="font-playfair text-3xl font-normal mb-2">
+            What Sets Us Apart
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
             {[
               {
