@@ -6,6 +6,7 @@ import {
   HIMALAYAN_VIEW_URL,
   HIMALAYAN_VIEW_BOOK_URL,
   HIMALAYAN_VIEW_SERVICES,
+  HIMALAYAN_VIEW_CONTACT,
 } from '@/lib/data'
 
 export const metadata: Metadata = {
@@ -36,13 +37,18 @@ export default function TravelPage() {
       <section className="py-20 px-6 text-center" aria-label="About Himalayan View">
         <div className="max-w-2xl mx-auto">
           <blockquote className="font-playfair text-xl italic text-text-primary leading-relaxed mb-8">
-            &ldquo;Operated by a local Pokhara team, Himalayan View specializes
-            in helping visitors explore the Himalayan regions of Nepal — with a
-            grassroots approach that empowers local communities.&rdquo;
+            <p>
+              &ldquo;Operated by a local Pokhara team, Himalayan View
+              specializes in helping visitors explore the Himalayan regions of
+              Nepal — with a grassroots approach that empowers local
+              communities.&rdquo;
+            </p>
+            <footer className="mt-4">
+              <cite className="font-playfair text-2xl not-italic text-gold">
+                Himalayan View
+              </cite>
+            </footer>
           </blockquote>
-          <p className="font-playfair text-2xl text-gold mb-6">
-            Himalayan View
-          </p>
           <a
             href={HIMALAYAN_VIEW_URL}
             target="_blank"
@@ -81,7 +87,7 @@ export default function TravelPage() {
       <hr className="border-t border-warm-tint" />
 
       {/* ── SERVICES ───────────────────────────────────────────── */}
-      <section className="py-20 px-6" aria-label="Services">
+      <section className="py-20 px-6" aria-label="Himalayan View services">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-gold text-xs tracking-[3px] uppercase mb-3">
@@ -125,25 +131,31 @@ export default function TravelPage() {
             Ready to Trek?
           </h2>
           <address className="not-italic text-cream/90 text-sm leading-loose mb-8">
-            <p>📍 Barahi Path, Lakeside-6, Pokhara, Nepal</p>
-            <p>👤 Manager: Anil Bijukchhe</p>
+            <p>📍 {HIMALAYAN_VIEW_CONTACT.address}</p>
+            <p>👤 Manager: {HIMALAYAN_VIEW_CONTACT.manager}</p>
             <p>
               📞{' '}
-              <a href="tel:+9779802090767" className="hover:text-cream underline">
-                +977 9802090767
+              <a
+                href={`tel:${HIMALAYAN_VIEW_CONTACT.mobile.replace(/\s/g, '')}`}
+                className="hover:text-cream underline"
+              >
+                {HIMALAYAN_VIEW_CONTACT.mobile}
               </a>{' '}
               /{' '}
-              <a href="tel:+977061456674" className="hover:text-cream underline">
-                +977 061 456674
+              <a
+                href={`tel:${HIMALAYAN_VIEW_CONTACT.landline.replace(/\s/g, '')}`}
+                className="hover:text-cream underline"
+              >
+                {HIMALAYAN_VIEW_CONTACT.landline}
               </a>
             </p>
             <p>
               ✉️{' '}
               <a
-                href="mailto:info.himalayanwalk@gmail.com"
+                href={`mailto:${HIMALAYAN_VIEW_CONTACT.email}`}
                 className="hover:text-cream underline"
               >
-                info.himalayanwalk@gmail.com
+                {HIMALAYAN_VIEW_CONTACT.email}
               </a>
             </p>
           </address>

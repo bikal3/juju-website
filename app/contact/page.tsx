@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
-import { HOTEL_CONTACT } from '@/lib/data'
+import { HOTEL_CONTACT, ROOMS } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact — Hotel JuJu',
   description:
     'Get in touch with Hotel JuJu in Pokhara, Nepal. Make a room inquiry or ask about your upcoming stay.',
   openGraph: {
@@ -179,9 +179,11 @@ export default function ContactPage() {
                   className="w-full border border-warm-tint bg-cream px-4 py-2 text-sm focus:outline-none focus:border-gold transition-colors"
                 >
                   <option value="">Select a room type</option>
-                  <option value="standard">Standard Room</option>
-                  <option value="triple">Standard Triple Room</option>
-                  <option value="deluxe">Deluxe Double/Twin Room</option>
+                  {ROOMS.map((room) => (
+                    <option key={room.id} value={room.id}>
+                      {room.name}
+                    </option>
+                  ))}
                 </select>
               </div>
 

@@ -127,6 +127,32 @@ export const TREKS: Trek[] = [
   },
 ]
 
+export const HIMALAYAN_VIEW_CONTACT = {
+  address: 'Barahi Path, Lakeside-6, Pokhara, Nepal',
+  manager: 'Anil Bijukchhe',
+  mobile: '+977 9802090767',
+  landline: '+977 061 456674',
+  email: 'info.himalayanwalk@gmail.com',
+}
+
+export const HOME_FEATURES = [
+  {
+    icon: '🏔️',
+    title: 'Himalayan Gateway',
+    text: "Perfect base for trekking & exploration into Nepal's iconic mountain regions.",
+  },
+  {
+    icon: '🤝',
+    title: 'Warm Hospitality',
+    text: 'Authentic Nepali welcome — our staff treats every guest like family.',
+  },
+  {
+    icon: '🗺️',
+    title: 'Local Expertise',
+    text: 'Trusted travel partner connections to get the most out of your Nepal visit.',
+  },
+]
+
 export const HIMALAYAN_VIEW_SERVICES = [
   {
     icon: '🧭',

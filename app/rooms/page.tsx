@@ -3,7 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import { ROOMS, BOOKING_URL } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Rooms',
+  title: 'Rooms — Hotel JuJu',
   description:
     'Explore Standard, Triple, and Deluxe rooms at Hotel JuJu in Pokhara — all with authentic Nepali warmth and essential amenities.',
   openGraph: {
@@ -82,7 +82,7 @@ export default function RoomsPage() {
       </div>
 
       {/* ── BOOKING CTA BANNER ─────────────────────────────────── */}
-      <section className="bg-text-primary py-16 px-6 text-center">
+      <section className="bg-text-primary py-16 px-6 text-center" aria-label="Booking call to action">
         <h2 className="font-playfair text-3xl font-normal text-cream mb-6">
           Ready to book your stay?
         </h2>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import RoomCard from '@/components/RoomCard'
-import { ROOMS, BOOKING_URL } from '@/lib/data'
+import { ROOMS, BOOKING_URL, HOME_FEATURES } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Hotel JuJu — Warm Nepali Hospitality in Pokhara',
@@ -100,23 +100,7 @@ export default function HomePage() {
             What Sets Us Apart
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-            {[
-              {
-                icon: '🏔️',
-                title: 'Himalayan Gateway',
-                text: "Perfect base for trekking & exploration into Nepal's iconic mountain regions.",
-              },
-              {
-                icon: '🤝',
-                title: 'Warm Hospitality',
-                text: 'Authentic Nepali welcome — our staff treats every guest like family.',
-              },
-              {
-                icon: '🗺️',
-                title: 'Local Expertise',
-                text: 'Trusted travel partner connections to get the most out of your Nepal visit.',
-              },
-            ].map(({ icon, title, text }) => (
+            {HOME_FEATURES.map(({ icon, title, text }) => (
               <div key={title}>
                 <div className="text-4xl mb-4" aria-hidden="true">
                   {icon}
