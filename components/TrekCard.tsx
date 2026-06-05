@@ -1,15 +1,17 @@
+import Link from 'next/link'
+
 interface TrekCardProps {
   name: string
   duration: string
   description: string
-  href: string
+  slug: string
 }
 
 export default function TrekCard({
   name,
   duration,
   description,
-  href,
+  slug,
 }: TrekCardProps) {
   return (
     <div className="bg-white shadow-md rounded-sm p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
@@ -24,15 +26,13 @@ export default function TrekCard({
       <p className="text-text-secondary text-sm leading-relaxed mb-4">
         {description}
       </p>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href={`/travel/${slug}`}
         className="inline-block bg-gold text-cream text-xs tracking-widest uppercase px-4 py-2 hover:opacity-90 transition-opacity"
       >
         Learn More
         <span className="sr-only"> about {name}</span>
-      </a>
+      </Link>
     </div>
   )
 }
