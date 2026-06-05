@@ -1,10 +1,12 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface RoomCardProps {
   name: string
   description: string
   amenities: string[]
-  imagePlaceholder: string
+  imageSrc: string
+  imageAlt: string
   href?: string
 }
 
@@ -12,14 +14,19 @@ export default function RoomCard({
   name,
   description,
   amenities,
-  imagePlaceholder,
+  imageSrc,
+  imageAlt,
   href = '/rooms',
 }: RoomCardProps) {
   return (
     <div className="bg-white shadow-md rounded-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-      {/* Image placeholder — replace div with <Image> when real photo is ready */}
-      <div className="bg-card-placeholder h-48 flex items-center justify-center">
-        <span className="text-gold text-xs italic">{imagePlaceholder}</span>
+      <div className="relative h-48">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-cover"
+        />
       </div>
 
       <div className="p-5">

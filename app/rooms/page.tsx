@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
 import { ROOMS, BOOKING_URL } from '@/lib/data'
@@ -21,7 +22,8 @@ export default function RoomsPage() {
         height="medium"
         title="Our Rooms"
         subtitle="Comfort, simplicity, and Nepali warmth"
-        imagePlaceholder="Hero photo — hotel corridor or exterior"
+        imageSrc="/images/rooms-hero.jpg"
+        imageAlt="Hotel JuJu Deluxe Room — bright and comfortable accommodation in Pokhara"
       />
 
       {/* ── ROOM DETAIL SECTIONS ───────────────────────────────── */}
@@ -36,11 +38,13 @@ export default function RoomsPage() {
                 : 'md:flex-row-reverse'
             }`}
           >
-            {/* Image placeholder — replace with <Image> when photos are ready */}
-            <div className="w-full md:w-1/2 bg-card-placeholder min-h-[300px] flex items-center justify-center rounded-sm">
-              <span className="text-gold text-xs italic">
-                {room.imagePlaceholder}
-              </span>
+            <div className="relative w-full md:w-1/2 min-h-[300px] rounded-sm overflow-hidden">
+              <Image
+                src={room.imageSrc}
+                alt={room.imageAlt}
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Content */}

@@ -35,7 +35,8 @@ export interface Room {
   description: string
   longDescription: string
   amenities: string[]
-  imagePlaceholder: string
+  imageSrc: string
+  imageAlt: string
   note: string | null
 }
 
@@ -47,7 +48,8 @@ export const ROOMS: Room[] = [
     longDescription:
       'Comfortable first-floor accommodation with fan cooling and a private attached bathroom. Everything you need for a restful stay in Pokhara.',
     amenities: STANDARD_AMENITIES,
-    imagePlaceholder: 'Standard Room photo',
+    imageSrc: '/images/room-standard.jpg',
+    imageAlt: 'Standard Room at Hotel JuJu — comfortable double bed with decorative gold diamond pattern wall',
     note: null,
   },
   {
@@ -57,7 +59,8 @@ export const ROOMS: Room[] = [
     longDescription:
       'Ideal for families or small groups, this room features one queen bed and one single bed, comfortably sleeping three adults with all standard amenities.',
     amenities: STANDARD_AMENITIES,
-    imagePlaceholder: 'Standard Triple Room photo',
+    imageSrc: '/images/room-triple.jpg',
+    imageAlt: 'Standard Triple Room at Hotel JuJu — spacious room with queen bed and single bed for up to 3 guests',
     note: 'Only 3 triple rooms available — ideal for families',
   },
   {
@@ -67,7 +70,8 @@ export const ROOMS: Room[] = [
     longDescription:
       'Our premium room on the second floor features a private balcony, remote-controlled air conditioning, and all standard amenities for a superior stay.',
     amenities: [...STANDARD_AMENITIES, 'Air Conditioning'],
-    imagePlaceholder: 'Deluxe Room photo',
+    imageSrc: '/images/room-deluxe.jpg',
+    imageAlt: 'Deluxe Room at Hotel JuJu — modern room with TV, desk, and private balcony',
     note: null,
   },
 ]

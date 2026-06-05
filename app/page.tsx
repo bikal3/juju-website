@@ -25,7 +25,8 @@ export default function HomePage() {
         eyebrow="Your Hospitality Partner"
         title="Hotel JuJu"
         subtitle="Experience warm Nepali hospitality in the heart of Nepal"
-        imagePlaceholder="Hero photo — hotel exterior"
+        imageSrc="/images/hero-exterior.jpg"
+        imageAlt="Hotel JuJu exterior — Lakeside Pokhara, Nepal"
       >
         <div className="flex gap-4 justify-center flex-wrap">
           <Link
@@ -81,7 +82,8 @@ export default function HomePage() {
                 name={room.name}
                 description={room.description}
                 amenities={room.amenities}
-                imagePlaceholder={room.imagePlaceholder}
+                imageSrc={room.imageSrc}
+                imageAlt={room.imageAlt}
               />
             ))}
           </div>

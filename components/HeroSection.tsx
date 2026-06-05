@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ReactNode } from 'react'
 
 type HeroHeight = 'full' | 'medium' | 'short'
@@ -8,7 +9,8 @@ interface HeroSectionProps {
   title: string
   subtitle?: string
   children?: ReactNode
-  imagePlaceholder?: string
+  imageSrc?: string
+  imageAlt?: string
 }
 
 const heightClasses: Record<HeroHeight, string> = {
@@ -23,19 +25,28 @@ export default function HeroSection({
   title,
   subtitle,
   children,
-  imagePlaceholder = 'Hero photo',
+  imageSrc,
+  imageAlt = 'Hotel JuJu',
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative flex items-center justify-center text-center bg-hero-gradient ${heightClasses[height]}`}
+      className={`relative flex items-center justify-center text-center ${heightClasses[height]}`}
     >
-      {/* Placeholder label — remove when real photo is added */}
-      <span
-        className="absolute bottom-4 right-5 text-white/20 text-xs italic tracking-wide"
-        aria-hidden="true"
-      >
-        {imagePlaceholder} — replace with real photo
-      </span>
+      {/* Background — real photo or gradient fallback */}
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-cover"
+          priority
+        />
+      ) : (
+        <div className="absolute inset-0 bg-hero-gradient" aria-hidden="true" />
+      )}
+
+      {/* Dark overlay so text stays readable over any photo */}
+      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
 
       <div className="relative z-10 px-6 max-w-3xl">
         {eyebrow && (

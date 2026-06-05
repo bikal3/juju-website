@@ -20,7 +20,8 @@ export default function ContactPage() {
         height="short"
         title="Contact Us"
         subtitle="We'd love to hear from you"
-        imagePlaceholder="Contact hero — hotel entrance or lobby"
+        imageSrc="/images/contact-hero.jpg"
+        imageAlt="Hotel JuJu entrance — Juju Cafe sign with flowers, Lakeside Pokhara"
       />
 
       <section className="py-20 px-6" aria-label="Contact information and inquiry form">
