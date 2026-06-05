@@ -22,6 +22,7 @@ export default function HomePage() {
     <>
       {/* ── HERO ───────────────────────────────────────────────── */}
       <HeroSection
+        height="medium"
         eyebrow="Your Hospitality Partner"
         title="Hotel JuJu"
         subtitle="Experience warm Nepali hospitality in the heart of Nepal"
