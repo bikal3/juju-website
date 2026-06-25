@@ -4,6 +4,7 @@ import { HOTEL_CONTACT, BOOKING_URL } from '@/lib/data'
 const FOOTER_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/rooms', label: 'Rooms' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/travel', label: 'Travel' },
   { href: '/contact', label: 'Contact' },
 ]

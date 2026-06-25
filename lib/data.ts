@@ -14,6 +14,8 @@ export const HOTEL_CONTACT = {
   address: 'Street 6 Gaurighat, Lakeside Pokhara 06, Nepal',
   phone: '+977 061-456315',
   email: 'info.jujuhotel@gmail.com',
+  // Replace with the hotel's WhatsApp-enabled mobile number
+  whatsapp: '+9779800000000',
 }
 
 const STANDARD_AMENITIES = [
@@ -333,5 +335,63 @@ export const HIMALAYAN_VIEW_SERVICES = [
     title: 'Trekking Gear',
     text: 'Quality gear rental and sales for all your Himalayan adventure needs.',
     href: 'https://sites.google.com/view/himalayanwalk-com/trekking-gear',
+  },
+]
+
+export interface GalleryPhoto {
+  src: string
+  alt: string
+}
+
+export interface GallerySection {
+  title: string
+  photos: GalleryPhoto[]
+}
+
+export const GALLERY_SECTIONS: GallerySection[] = [
+  {
+    title: 'Restaurant & Bar',
+    photos: [
+      { src: '/images/restaurant-bar.jpg', alt: 'Hotel JuJu restaurant bar with atmospheric LED lighting and plants' },
+      { src: '/images/restaurant-interior.jpg', alt: 'Hotel JuJu restaurant interior with warm orange walls and wicker lights' },
+      { src: '/images/restaurant-counter.jpg', alt: 'Hotel JuJu bar counter' },
+    ],
+  },
+  {
+    title: 'Standard Rooms',
+    photos: [
+      { src: '/images/room-standard.jpg', alt: 'Standard room with gold diamond pattern feature wall' },
+      { src: '/images/gallery-standard-2.jpg', alt: 'Standard room at Hotel JuJu' },
+      { src: '/images/gallery-standard-3.jpg', alt: 'Standard room interior view' },
+    ],
+  },
+  {
+    title: 'Standard Triple Rooms',
+    photos: [
+      { src: '/images/room-triple.jpg', alt: 'Standard triple room panoramic view' },
+      { src: '/images/gallery-triple-2.jpg', alt: 'Triple room with queen bed and single bed' },
+      { src: '/images/gallery-triple-3.jpg', alt: 'Standard triple room at Hotel JuJu' },
+    ],
+  },
+  {
+    title: 'Deluxe Rooms',
+    photos: [
+      { src: '/images/room-deluxe.jpg', alt: 'Deluxe room with TV and work desk' },
+      { src: '/images/gallery-deluxe-2.jpg', alt: 'Deluxe room interior at Hotel JuJu' },
+      { src: '/images/gallery-deluxe-3.jpg', alt: 'Deluxe room with decorative wall feature' },
+    ],
+  },
+  {
+    title: 'Bathroom',
+    photos: [
+      { src: '/images/gallery-bathroom.jpg', alt: 'Clean modern bathroom at Hotel JuJu' },
+    ],
+  },
+  {
+    title: 'Hotel Exterior',
+    photos: [
+      { src: '/images/hero-exterior.jpg', alt: 'Hotel JuJu exterior street view in Lakeside Pokhara' },
+      { src: '/images/contact-hero.jpg', alt: 'Hotel JuJu entrance with Juju Cafe sign and flowers' },
+    ],
   },
 ]
