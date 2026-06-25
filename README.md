@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hotel JuJu — Official Website
 
-## Getting Started
+Marketing website for **Hotel JuJu**, a hospitality property in Lakeside Pokhara, Nepal.
 
-First, run the development server:
+**Live site:** [www.hoteljuju.com.np](https://www.hoteljuju.com.np)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Page | URL |
+|---|---|
+| Home | `/` |
+| Rooms | `/rooms` |
+| Gallery | `/gallery` |
+| Travel Partner | `/travel` |
+| Trek Detail | `/travel/[slug]` |
+| Contact | `/contact` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Next.js 14** — App Router, static export
+- **Tailwind CSS** — styling with custom brand tokens
+- **GitHub Pages** — hosting via GitHub Actions
 
-To learn more about Next.js, take a look at the following resources:
+## Updating Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All content is centralised in `lib/data.ts`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Hotel contact details & WhatsApp number** — `HOTEL_CONTACT`
+- **Room details & amenities** — `ROOMS`
+- **Gallery photos** — `GALLERY_SECTIONS`
+- **Trek packages** — `TREK_DETAILS`
+- **Himalayan View contact** — `HIMALAYAN_VIEW_CONTACT`
 
-## Deploy on Vercel
+## Adding Photos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Convert HEIC photos to JPEG using macOS `sips`:
+   ```bash
+   sips -s format jpeg INPUT.HEIC --out public/images/OUTPUT.jpg --resampleWidth 1200
+   ```
+2. Add the filename to the relevant section in `lib/data.ts`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Pushes to `main` automatically deploy via GitHub Actions to GitHub Pages.
