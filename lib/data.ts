@@ -14,8 +14,7 @@ export const HOTEL_CONTACT = {
   address: 'Street 6 Gaurighat, Lakeside Pokhara 06, Nepal',
   phone: '+977 061-456315',
   email: 'info.jujuhotel@gmail.com',
-  // Replace with the hotel's WhatsApp-enabled mobile number
-  whatsapp: '+9779800000000',
+  whatsapp: '+9779802090767',
 }
 
 const STANDARD_AMENITIES = [
