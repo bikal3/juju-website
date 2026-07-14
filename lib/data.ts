@@ -280,13 +280,15 @@ export interface Trek {
   slug: string
   name: string
   duration: string
+  difficulty: string
   description: string
 }
 
-export const TREKS: Trek[] = TREK_DETAILS.map(({ slug, name, duration, description }) => ({
+export const TREKS: Trek[] = TREK_DETAILS.map(({ slug, name, duration, difficulty, description }) => ({
   slug,
   name,
   duration,
+  difficulty,
   description,
 }))
 
