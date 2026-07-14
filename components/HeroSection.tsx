@@ -46,8 +46,12 @@ export default function HeroSection({
         <div className="absolute inset-0 bg-hero-gradient" aria-hidden="true" />
       )}
 
-      {/* Dark overlay so text stays readable over any photo */}
-      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+      {/* Gradient overlay — stronger at top for nav contrast, readable in centre */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.50) 100%)' }}
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 px-6 max-w-3xl">
         {eyebrow && (

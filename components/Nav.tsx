@@ -28,7 +28,9 @@ export default function Nav() {
     { href: '/contact', label: t.contact },
   ]
 
-  const navBg = scrolled || menuOpen ? 'bg-[rgba(20,12,5,0.92)]' : 'bg-transparent'
+  const navBg = scrolled || menuOpen
+    ? 'bg-[rgba(20,12,5,0.92)]'
+    : 'bg-gradient-to-b from-black/60 to-transparent'
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${navBg}`}>
