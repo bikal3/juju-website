@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: 'Contact — Hotel JuJu',
     description: 'Reach Hotel JuJu at Lakeside Pokhara, Nepal.',
     type: 'website',
+    images: [{ url: '/images/contact-hero.jpg', width: 1200, height: 630, alt: 'Hotel JuJu entrance in Lakeside Pokhara' }],
   },
 }
 

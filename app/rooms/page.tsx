@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Standard, Triple, and Deluxe rooms at Hotel JuJu, Lakeside Pokhara.',
     type: 'website',
+    images: [{ url: '/images/rooms-hero.jpg', width: 1200, height: 630, alt: 'Hotel JuJu Deluxe Room in Pokhara' }],
   },
 }
 

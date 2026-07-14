@@ -21,6 +21,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.hoteljuju.com.np'),
   title: {
     default: 'Hotel JuJu — Warm Nepali Hospitality in Pokhara',
     template: '%s — Hotel JuJu',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'Hotel JuJu',
     type: 'website',
+    images: [{ url: '/images/hero-exterior.jpg', width: 1200, height: 630, alt: 'Hotel JuJu exterior in Lakeside Pokhara, Nepal' }],
   },
 }
 
