@@ -30,6 +30,7 @@ export default function TravelPage() {
         eyebrow="Our Travel Partner"
         title="Himalayan View"
         subtitle="Your gateway to Nepal's most iconic treks"
+        imageSrc="/images/hero-exterior.jpg"
         imageAlt="Himalayan View — trekking partner in Pokhara, Nepal"
       />
 
