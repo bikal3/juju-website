@@ -60,7 +60,7 @@ export default function HomeContent() {
             <p className="text-gold text-xs tracking-[3px] uppercase mb-3">{t.roomsLabel}</p>
             <h2 className="font-playfair text-3xl font-normal">{t.roomsTitle}</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ROOMS.map((room) => (
               <RoomCard
                 key={room.id}
@@ -82,7 +82,7 @@ export default function HomeContent() {
         <div className="max-w-5xl mx-auto">
           <p className="text-gold text-xs tracking-[3px] uppercase mb-3">{t.whyLabel}</p>
           <h2 className="font-playfair text-3xl font-normal mb-2">{t.whyTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
             {HOME_FEATURES.map(({ icon, title, text }) => (
               <div key={title}>
                 <div className="text-4xl mb-4" aria-hidden="true">{icon}</div>

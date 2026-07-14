@@ -76,7 +76,7 @@ export default function TravelPage() {
               Choose your adventure — from weekend escapes to epic circuits
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TREKS.map((trek) => (
               <TrekCard key={trek.name} {...trek} />
             ))}
@@ -95,7 +95,7 @@ export default function TravelPage() {
             </p>
             <h2 className="font-playfair text-3xl font-normal">Services</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {HIMALAYAN_VIEW_SERVICES.map(({ icon, title, text, href }) => (
               <div
                 key={title}
