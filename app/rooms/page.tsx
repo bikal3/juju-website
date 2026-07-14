@@ -44,6 +44,7 @@ export default function RoomsPage() {
                 src={imgSrc(room.imageSrc)}
                 alt={room.imageAlt}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

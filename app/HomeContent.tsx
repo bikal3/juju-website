@@ -102,6 +102,7 @@ export default function HomeContent() {
               src={imgSrc('/images/restaurant-bar.jpg')}
               alt="Hotel JuJu restaurant bar with atmospheric lighting"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
