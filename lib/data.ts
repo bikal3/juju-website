@@ -282,7 +282,20 @@ export interface Trek {
   duration: string
   difficulty: string
   description: string
+  image: string
 }
+
+// Placeholder map — replace values with real trek photos when available
+const TREK_IMAGES: Record<string, string> = {
+  'annapurna-base-camp':   '/images/trek-annapurna-base-camp.jpg',
+  'mardi-himal':           '/images/trek-mardi-himal.jpg',
+  'annapurna-circuit':     '/images/trek-annapurna-circuit.jpg',
+  'ghorepani-poon-hill':   '/images/trek-poon-hill.jpg',
+  'khopra-ridge':          '/images/trek-khopra-ridge.jpg',
+  'upper-mustang':         '/images/trek-upper-mustang.jpg',
+}
+
+const TREK_FALLBACK = '/images/hero-exterior.jpg'
 
 export const TREKS: Trek[] = TREK_DETAILS.map(({ slug, name, duration, difficulty, description }) => ({
   slug,
@@ -290,6 +303,7 @@ export const TREKS: Trek[] = TREK_DETAILS.map(({ slug, name, duration, difficult
   duration,
   difficulty,
   description,
+  image: TREK_IMAGES[slug] ?? TREK_FALLBACK,
 }))
 
 export const HIMALAYAN_VIEW_CONTACT = {

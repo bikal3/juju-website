@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { imgSrc } from '@/lib/base-path'
 
 interface TrekCardProps {
   name: string
@@ -6,23 +8,35 @@ interface TrekCardProps {
   difficulty: string
   description: string
   slug: string
+  image: string
 }
 
 const difficultyStyle: Record<string, string> = {
-  'Easy to Moderate': 'bg-green-50 text-green-700 border border-green-200',
-  'Moderate':         'bg-amber-50 text-amber-700 border border-amber-200',
+  'Easy to Moderate':      'bg-green-50 text-green-700 border border-green-200',
+  'Moderate':              'bg-amber-50 text-amber-700 border border-amber-200',
   'Moderate to Strenuous': 'bg-orange-50 text-orange-700 border border-orange-200',
-  'Strenuous':        'bg-red-50 text-red-700 border border-red-200',
+  'Strenuous':             'bg-red-50 text-red-700 border border-red-200',
 }
 
-export default function TrekCard({ name, duration, difficulty, description, slug }: TrekCardProps) {
+export default function TrekCard({ name, duration, difficulty, description, slug, image }: TrekCardProps) {
   const diffClass = difficultyStyle[difficulty] ?? 'bg-warm-tint text-gold'
 
   return (
     <div className="bg-white shadow-md rounded-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200 flex flex-col">
-      {/* Difficulty colour strip */}
-      <div className={`px-5 py-2 text-xs tracking-widest uppercase font-medium ${diffClass}`}>
-        {difficulty}
+      {/* Photo */}
+      <div className="relative w-full aspect-[16/9] bg-card-placeholder">
+        <Image
+          src={imgSrc(image)}
+          alt={`${name} trek scenery`}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+          onError={undefined}
+        />
+        {/* Difficulty badge overlaid on photo */}
+        <span className={`absolute top-3 left-3 text-xs tracking-widest uppercase font-medium px-2 py-1 ${diffClass}`}>
+          {difficulty}
+        </span>
       </div>
 
       <div className="p-5 flex flex-col flex-1">
