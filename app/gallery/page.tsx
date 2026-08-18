@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Gallery — Hotel JuJu',
   description:
     'Photos of Hotel JuJu in Lakeside Pokhara — rooms, restaurant, bar, and hotel exterior.',
+  alternates: {
+    canonical: '/gallery/',
+  },
   openGraph: {
     title: 'Gallery — Hotel JuJu',
     description: 'See our rooms, restaurant, and facilities in Lakeside Pokhara, Nepal.',

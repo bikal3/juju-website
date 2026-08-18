@@ -3,9 +3,11 @@ import TrekCard from '@/components/TrekCard'
 
 const mockTrek = {
   name: 'Annapurna Base Camp',
-  duration: '5–12 days',
+  duration: '8 days',
+  difficulty: 'Moderate',
   description: 'Trek through rhododendron forests to the Annapurna Sanctuary.',
-  href: 'https://example.com/abc',
+  slug: 'annapurna-base-camp',
+  image: '/images/trek-annapurna-base-camp.jpg',
 }
 
 describe('TrekCard', () => {
@@ -16,13 +18,17 @@ describe('TrekCard', () => {
 
   it('renders duration badge', () => {
     render(<TrekCard {...mockTrek} />)
-    expect(screen.getByText('5–12 days')).toBeInTheDocument()
+    expect(screen.getByText('8 days')).toBeInTheDocument()
   })
 
-  it('renders Learn More link with correct href', () => {
+  it('renders difficulty badge', () => {
+    render(<TrekCard {...mockTrek} />)
+    expect(screen.getByText('Moderate')).toBeInTheDocument()
+  })
+
+  it('renders Learn More link to the trek detail page', () => {
     render(<TrekCard {...mockTrek} />)
     const link = screen.getByRole('link', { name: /learn more/i })
-    expect(link).toHaveAttribute('href', 'https://example.com/abc')
-    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('href', '/travel/annapurna-base-camp')
   })
 })

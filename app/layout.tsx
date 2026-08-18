@@ -28,9 +28,6 @@ export const metadata: Metadata = {
   },
   description:
     'Experience warm Nepali hospitality at Hotel JuJu in Lakeside Pokhara, Nepal. Comfortable rooms, trekking connections, and authentic local experiences.',
-  alternates: {
-    canonical: 'https://www.hoteljuju.com.np',
-  },
   openGraph: {
     url: 'https://www.hoteljuju.com.np',
     siteName: 'Hotel JuJu',

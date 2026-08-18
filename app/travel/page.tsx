@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Travel Partner — Himalayan View',
   description:
     "Explore Nepal with Himalayan View — Hotel JuJu's trusted trekking partner. Guided treks, porter hire, and gear rental from Pokhara.",
+  alternates: {
+    canonical: '/travel/',
+  },
   openGraph: {
     title: 'Travel Partner — Himalayan View Treks',
     description:

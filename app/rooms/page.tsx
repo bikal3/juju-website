@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Rooms — Hotel JuJu',
   description:
     'Explore Standard, Triple, and Deluxe rooms at Hotel JuJu in Pokhara — all with authentic Nepali warmth and essential amenities.',
+  alternates: {
+    canonical: '/rooms/',
+  },
   openGraph: {
     title: 'Rooms — Hotel JuJu',
     description:

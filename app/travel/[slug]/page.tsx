@@ -18,6 +18,9 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `${trek.name} — Hotel JuJu Travel`,
     description: trek.overview.slice(0, 155),
+    alternates: {
+      canonical: `/travel/${trek.slug}/`,
+    },
     openGraph: {
       title: `${trek.name} Trek | Hotel JuJu, Pokhara`,
       description: trek.overview.slice(0, 155),

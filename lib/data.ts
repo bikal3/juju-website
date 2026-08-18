@@ -91,6 +91,7 @@ export interface TrekDetail {
   overview: string
   difficulty: string
   maxAltitude: string
+  image: string
   highlights: string[]
   itinerary: TrekDay[]
 }
@@ -98,6 +99,7 @@ export interface TrekDetail {
 export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'annapurna-base-camp',
+    image: '/images/trek-annapurna-base-camp.jpg',
     name: 'Annapurna Base Camp',
     duration: '8 days',
     difficulty: 'Moderate',
@@ -127,6 +129,7 @@ export const TREK_DETAILS: TrekDetail[] = [
   },
   {
     slug: 'mardi-himal',
+    image: '/images/trek-mardi-himal.jpg',
     name: 'Mardi Himal Trek',
     duration: '6 days',
     difficulty: 'Moderate',
@@ -153,6 +156,7 @@ export const TREK_DETAILS: TrekDetail[] = [
   },
   {
     slug: 'annapurna-circuit',
+    image: '/images/trek-annapurna-circuit.jpg',
     name: 'Annapurna Circuit',
     duration: '16 days',
     difficulty: 'Moderate to Strenuous',
@@ -190,6 +194,7 @@ export const TREK_DETAILS: TrekDetail[] = [
   },
   {
     slug: 'manaslu-circuit',
+    image: '/images/trek-manaslu-circuit.jpg',
     name: 'Manaslu Circuit',
     duration: '13 days',
     difficulty: 'Strenuous',
@@ -224,6 +229,7 @@ export const TREK_DETAILS: TrekDetail[] = [
   },
   {
     slug: 'poon-hill',
+    image: '/images/trek-poon-hill.jpg',
     name: 'Poon Hill',
     duration: '5 days',
     difficulty: 'Easy to Moderate',
@@ -250,6 +256,7 @@ export const TREK_DETAILS: TrekDetail[] = [
   },
   {
     slug: 'korchan-khumai-dhada',
+    image: '/images/trek-korchan-khumai-dhada.jpg',
     name: 'Korchan / Khumai Dhada Hill',
     duration: '5 days',
     difficulty: 'Easy to Moderate',
@@ -285,26 +292,18 @@ export interface Trek {
   image: string
 }
 
-// Placeholder map — replace values with real trek photos when available
-const TREK_IMAGES: Record<string, string> = {
-  'annapurna-base-camp':   '/images/trek-annapurna-base-camp.jpg',
-  'mardi-himal':           '/images/trek-mardi-himal.jpg',
-  'annapurna-circuit':     '/images/trek-annapurna-circuit.jpg',
-  'ghorepani-poon-hill':   '/images/trek-poon-hill.jpg',
-  'khopra-ridge':          '/images/trek-khopra-ridge.jpg',
-  'upper-mustang':         '/images/trek-upper-mustang.jpg',
-}
-
-const TREK_FALLBACK = '/images/hero-exterior.jpg'
-
-export const TREKS: Trek[] = TREK_DETAILS.map(({ slug, name, duration, difficulty, description }) => ({
-  slug,
-  name,
-  duration,
-  difficulty,
-  description,
-  image: TREK_IMAGES[slug] ?? TREK_FALLBACK,
-}))
+// Each trek carries its own photo on TREK_DETAILS, so a card can never
+// silently fall back to an unrelated image.
+export const TREKS: Trek[] = TREK_DETAILS.map(
+  ({ slug, name, duration, difficulty, description, image }) => ({
+    slug,
+    name,
+    duration,
+    difficulty,
+    description,
+    image,
+  })
+)
 
 export const HIMALAYAN_VIEW_CONTACT = {
   address: 'Barahi Path, Lakeside-6, Pokhara, Nepal',

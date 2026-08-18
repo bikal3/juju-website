@@ -5,7 +5,8 @@ const mockRoom = {
   name: 'Standard Room',
   description: 'Fan-cooled room with attached bathroom.',
   amenities: ['Wi-Fi', 'Fan', 'Tea/Coffee Making'],
-  imagePlaceholder: 'Standard Room photo',
+  imageSrc: '/images/room-standard.jpg',
+  imageAlt: 'Standard Room at Hotel JuJu',
 }
 
 describe('RoomCard', () => {
@@ -22,6 +23,11 @@ describe('RoomCard', () => {
   it('renders amenities', () => {
     render(<RoomCard {...mockRoom} />)
     expect(screen.getByText('Wi-Fi')).toBeInTheDocument()
+  })
+
+  it('renders the room photo with its alt text', () => {
+    render(<RoomCard {...mockRoom} />)
+    expect(screen.getByAltText('Standard Room at Hotel JuJu')).toBeInTheDocument()
   })
 
   it('renders View Room link to /rooms', () => {
