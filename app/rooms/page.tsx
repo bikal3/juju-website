@@ -3,21 +3,19 @@ import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
 import { ROOMS, BOOKING_URL } from '@/lib/data'
 import { imgSrc } from '@/lib/base-path'
+import { pageSeo } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Rooms — Hotel JuJu',
   description:
     'Explore Standard, Triple, and Deluxe rooms at Hotel JuJu in Pokhara — all with authentic Nepali warmth and essential amenities.',
-  alternates: {
-    canonical: '/rooms/',
-  },
-  openGraph: {
+  ...pageSeo({
+    path: '/rooms/',
     title: 'Rooms — Hotel JuJu',
-    description:
-      'Standard, Triple, and Deluxe rooms at Hotel JuJu, Lakeside Pokhara.',
-    type: 'website',
-    images: [{ url: '/images/rooms-hero.jpg', width: 1200, height: 630, alt: 'Hotel JuJu Deluxe Room in Pokhara' }],
-  },
+    description: 'Standard, Triple, and Deluxe rooms at Hotel JuJu, Lakeside Pokhara.',
+    image: '/images/rooms-hero.jpg',
+    imageAlt: 'Hotel JuJu Deluxe Room in Pokhara',
+  }),
 }
 
 export default function RoomsPage() {

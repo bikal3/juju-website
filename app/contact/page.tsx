@@ -2,20 +2,20 @@ import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
 import InquiryForm from '@/components/InquiryForm'
 import { HOTEL_CONTACT } from '@/lib/data'
+import { telHref } from '@/lib/phone'
+import { pageSeo } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Contact — Hotel JuJu',
   description:
     'Get in touch with Hotel JuJu in Pokhara, Nepal. Make a room inquiry or ask about your upcoming stay.',
-  alternates: {
-    canonical: '/contact/',
-  },
-  openGraph: {
+  ...pageSeo({
+    path: '/contact/',
     title: 'Contact — Hotel JuJu',
     description: 'Reach Hotel JuJu at Lakeside Pokhara, Nepal.',
-    type: 'website',
-    images: [{ url: '/images/contact-hero.jpg', width: 1200, height: 630, alt: 'Hotel JuJu entrance in Lakeside Pokhara' }],
-  },
+    image: '/images/contact-hero.jpg',
+    imageAlt: 'Hotel JuJu entrance in Lakeside Pokhara',
+  }),
 }
 
 export default function ContactPage() {
@@ -45,7 +45,7 @@ export default function ContactPage() {
               <p>
                 📞{' '}
                 <a
-                  href={`tel:${HOTEL_CONTACT.phone}`}
+                  href={telHref(HOTEL_CONTACT.phone)}
                   className="hover:text-gold transition-colors"
                 >
                   {HOTEL_CONTACT.phone}

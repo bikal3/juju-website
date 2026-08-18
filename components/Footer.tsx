@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { HOTEL_CONTACT, BOOKING_URL } from '@/lib/data'
+import { telHref } from '@/lib/phone'
 
 const FOOTER_LINKS = [
   { href: '/', label: 'Home' },
@@ -46,7 +47,7 @@ export default function Footer() {
         <address className="text-xs leading-loose not-italic md:text-right">
           <p>{HOTEL_CONTACT.address}</p>
           <a
-            href={`tel:${HOTEL_CONTACT.phone}`}
+            href={telHref(HOTEL_CONTACT.phone)}
             className="hover:text-cream transition-colors"
           >
             {HOTEL_CONTACT.phone}

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import { TREK_DETAILS, HIMALAYAN_VIEW_BOOK_URL } from '@/lib/data'
+import { pageSeo } from '@/lib/seo'
 
 interface Props {
   params: { slug: string }
@@ -18,14 +19,13 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `${trek.name} — Hotel JuJu Travel`,
     description: trek.overview.slice(0, 155),
-    alternates: {
-      canonical: `/travel/${trek.slug}/`,
-    },
-    openGraph: {
+    ...pageSeo({
+      path: `/travel/${trek.slug}/`,
       title: `${trek.name} Trek | Hotel JuJu, Pokhara`,
       description: trek.overview.slice(0, 155),
-      type: 'website',
-    },
+      image: trek.image,
+      imageAlt: `${trek.name} — Himalayan View trek from Pokhara`,
+    }),
   }
 }
 
@@ -41,6 +41,8 @@ export default function TrekDetailPage({ params }: Props) {
         eyebrow="Himalayan View Trek"
         title={trek.name}
         subtitle={`${trek.duration} · ${trek.difficulty} · Max ${trek.maxAltitude}`}
+        imageSrc={trek.image}
+        imageAlt={`${trek.name} — Himalayan View trek from Pokhara`}
       />
 
       {/* ── BREADCRUMB ─────────────────────────────────────────── */}

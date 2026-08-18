@@ -3,19 +3,19 @@ import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import { GALLERY_SECTIONS } from '@/lib/data'
 import { imgSrc } from '@/lib/base-path'
+import { pageSeo } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Gallery — Hotel JuJu',
   description:
     'Photos of Hotel JuJu in Lakeside Pokhara — rooms, restaurant, bar, and hotel exterior.',
-  alternates: {
-    canonical: '/gallery/',
-  },
-  openGraph: {
+  ...pageSeo({
+    path: '/gallery/',
     title: 'Gallery — Hotel JuJu',
     description: 'See our rooms, restaurant, and facilities in Lakeside Pokhara, Nepal.',
-    type: 'website',
-  },
+    image: '/images/restaurant-bar.jpg',
+    imageAlt: 'Hotel JuJu restaurant bar with atmospheric lighting',
+  }),
 }
 
 export default function GalleryPage() {

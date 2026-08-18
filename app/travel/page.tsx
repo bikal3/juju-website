@@ -8,20 +8,21 @@ import {
   HIMALAYAN_VIEW_SERVICES,
   HIMALAYAN_VIEW_CONTACT,
 } from '@/lib/data'
+import { telHref } from '@/lib/phone'
+import { pageSeo } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Travel Partner — Himalayan View',
   description:
     "Explore Nepal with Himalayan View — Hotel JuJu's trusted trekking partner. Guided treks, porter hire, and gear rental from Pokhara.",
-  alternates: {
-    canonical: '/travel/',
-  },
-  openGraph: {
+  ...pageSeo({
+    path: '/travel/',
     title: 'Travel Partner — Himalayan View Treks',
     description:
       'Guided treks, porter hire, and trekking gear from our trusted Pokhara-based travel partner.',
-    type: 'website',
-  },
+    image: '/images/trek-annapurna-base-camp.jpg',
+    imageAlt: 'Trekker at Annapurna Base Camp, 4,130 m',
+  }),
 }
 
 export default function TravelPage() {
@@ -33,8 +34,8 @@ export default function TravelPage() {
         eyebrow="Our Travel Partner"
         title="Himalayan View"
         subtitle="Your gateway to Nepal's most iconic treks"
-        imageSrc="/images/hero-exterior.jpg"
-        imageAlt="Himalayan View — trekking partner in Pokhara, Nepal"
+        imageSrc="/images/trek-annapurna-circuit.jpg"
+        imageAlt="Thorong La Pass, 5,416 m — Annapurna Circuit with Himalayan View"
       />
 
       {/* ── INTRO / QUOTE ──────────────────────────────────────── */}
@@ -140,14 +141,14 @@ export default function TravelPage() {
             <p>
               📞{' '}
               <a
-                href={`tel:${HIMALAYAN_VIEW_CONTACT.mobile.replace(/\s/g, '')}`}
+                href={telHref(HIMALAYAN_VIEW_CONTACT.mobile)}
                 className="hover:text-cream underline"
               >
                 {HIMALAYAN_VIEW_CONTACT.mobile}
               </a>{' '}
               /{' '}
               <a
-                href={`tel:${HIMALAYAN_VIEW_CONTACT.landline.replace(/\s/g, '')}`}
+                href={telHref(HIMALAYAN_VIEW_CONTACT.landline)}
                 className="hover:text-cream underline"
               >
                 {HIMALAYAN_VIEW_CONTACT.landline}

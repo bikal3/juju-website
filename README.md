@@ -39,7 +39,20 @@ All content is centralised in `lib/data.ts`:
    ```bash
    sips -s format jpeg INPUT.HEIC --out public/images/OUTPUT.jpg --resampleWidth 1200
    ```
-2. Add the filename to the relevant section in `lib/data.ts`
+2. Compress before committing — the static export serves these files as-is,
+   with no build-time optimisation:
+   ```bash
+   ./scripts/optimize-images.sh        # requires: brew install jpeg-turbo
+   ```
+3. Add the filename to the relevant section in `lib/data.ts`
+
+## Checks
+
+CI runs these on every push to `main`, and blocks the deploy if any fail:
+
+```bash
+npm run lint && npm run typecheck && npm test && npm run build
+```
 
 ## Deployment
 
