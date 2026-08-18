@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { imgSrc } from '@/lib/base-path'
 
 interface RoomCardProps {
+  id?: string
   name: string
   description: string
   amenities: string[]
@@ -12,13 +13,15 @@ interface RoomCardProps {
 }
 
 export default function RoomCard({
+  id,
   name,
   description,
   amenities,
   imageSrc,
   imageAlt,
-  href = '/rooms',
+  href,
 }: RoomCardProps) {
+  const target = href ?? (id ? `/rooms/#${id}` : '/rooms')
   return (
     <div className="bg-white shadow-md rounded-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
       <div className="relative h-48">
@@ -48,7 +51,7 @@ export default function RoomCard({
         </ul>
 
         <Link
-          href={href}
+          href={target}
           className="inline-block bg-gold text-cream text-xs tracking-widest uppercase px-5 py-2 hover:opacity-90 transition-opacity"
         >
           View Room

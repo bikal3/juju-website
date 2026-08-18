@@ -135,7 +135,7 @@ export default function TravelPage() {
           <h2 className="font-playfair text-3xl font-normal text-cream mb-8">
             Ready to Trek?
           </h2>
-          <address className="not-italic text-cream/90 text-sm leading-loose mb-8">
+          <address className="not-italic text-cream text-sm leading-loose mb-8">
             <p>📍 {HIMALAYAN_VIEW_CONTACT.address}</p>
             <p>👤 Manager: {HIMALAYAN_VIEW_CONTACT.manager}</p>
             <p>

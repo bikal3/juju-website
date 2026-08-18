@@ -8,6 +8,7 @@ const mockTrek = {
   description: 'Trek through rhododendron forests to the Annapurna Sanctuary.',
   slug: 'annapurna-base-camp',
   image: '/images/trek-annapurna-base-camp.jpg',
+  imageAlt: 'Trekker beside the Annapurna Base Camp welcome sign at 4,130 m',
 }
 
 describe('TrekCard', () => {

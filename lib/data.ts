@@ -92,6 +92,7 @@ export interface TrekDetail {
   difficulty: string
   maxAltitude: string
   image: string
+  imageAlt: string
   highlights: string[]
   itinerary: TrekDay[]
 }
@@ -100,6 +101,8 @@ export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'annapurna-base-camp',
     image: '/images/trek-annapurna-base-camp.jpg',
+    imageAlt:
+      'Trekker beside the Annapurna Base Camp welcome sign at 4,130 m, prayer flags either side',
     name: 'Annapurna Base Camp',
     duration: '8 days',
     difficulty: 'Moderate',
@@ -130,6 +133,8 @@ export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'mardi-himal',
     image: '/images/trek-mardi-himal.jpg',
+    imageAlt:
+      'Machhapuchhre (Fishtail) rising sharply above the teahouses at Mardi Himal High Camp',
     name: 'Mardi Himal Trek',
     duration: '6 days',
     difficulty: 'Moderate',
@@ -151,12 +156,14 @@ export const TREK_DETAILS: TrekDetail[] = [
       { day: 3, title: 'Low Camp → High Camp (3,585 m)' },
       { day: 4, title: 'High Camp → Mardi Himal Base Camp (4,500 m) → Middle Camp (3,200 m)', note: 'Early start for clearest mountain views' },
       { day: 5, title: 'Middle Camp → Jhinu Dhada (1,700 m)', note: 'Natural hot water spring stop' },
-      { day: 6, title: 'Jhinu Dhada → Drive to Pokhara (831 m)' },
+      { day: 6, title: 'Jhinu Dhada → Drive to Pokhara (830 m)' },
     ],
   },
   {
     slug: 'annapurna-circuit',
     image: '/images/trek-annapurna-circuit.jpg',
+    imageAlt:
+      'Prayer flags and the Thorong La Pass marker at 5,416 m under clear blue sky',
     name: 'Annapurna Circuit',
     duration: '16 days',
     difficulty: 'Moderate to Strenuous',
@@ -164,10 +171,10 @@ export const TREK_DETAILS: TrekDetail[] = [
     description:
       "One of Nepal's classic routes — a full circuit of the Annapurna massif crossing the Thorong La pass.",
     overview:
-      "The Annapurna Circuit is widely considered one of the world's great long-distance treks — a journey of extraordinary variety passing through subtropical forest, alpine meadows, and high desert plateau. The route crosses Thorong La pass at 5,416 m, one of the world's highest trekking passes, and skirts the shore of Tilicho Lake, the world's highest lake at 4,919 m. The trail winds through villages of several distinct ethnic groups, offering as rich a cultural experience as a scenic one.",
+      "The Annapurna Circuit is widely considered one of the world's great long-distance treks — a journey of extraordinary variety passing through subtropical forest, alpine meadows, and high desert plateau. The route crosses Thorong La pass at 5,416 m, one of the world's highest trekking passes, and skirts the shore of Tilicho Lake, one of the world's highest lakes at 4,919 m. The trail winds through villages of several distinct ethnic groups, offering as rich a cultural experience as a scenic one.",
     highlights: [
       'Thorong La Pass (5,416 m) — one of the world\'s highest trekking passes',
-      'Tilicho Lake (4,919 m) — highest lake in the world',
+      'Tilicho Lake (4,919 m) — one of the highest lakes in the world',
       'Muktinath — sacred Hindu and Buddhist pilgrimage site',
       'Diverse landscapes: subtropical forest to high-altitude desert',
       'Multi-ethnic villages including Gurung, Thakali, and Tibetan communities',
@@ -195,6 +202,8 @@ export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'manaslu-circuit',
     image: '/images/trek-manaslu-circuit.jpg',
+    imageAlt:
+      'Tibetan-style chorten beside the trail with monks in maroon robes and snow peaks beyond',
     name: 'Manaslu Circuit',
     duration: '13 days',
     difficulty: 'Strenuous',
@@ -230,6 +239,8 @@ export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'poon-hill',
     image: '/images/trek-poon-hill.jpg',
+    imageAlt:
+      'Porter on a stone-paved trail through rhododendron in full bloom, snow peaks ahead',
     name: 'Poon Hill',
     duration: '5 days',
     difficulty: 'Easy to Moderate',
@@ -249,7 +260,7 @@ export const TREK_DETAILS: TrekDetail[] = [
     itinerary: [
       { day: 1, title: 'Permit day & Pokhara sightseeing', note: 'Obtain ACAP and TIMS permits in Pokhara' },
       { day: 2, title: 'Drive to Nayapul → Trek to Ulleri (2,055 m)' },
-      { day: 3, title: 'Ulleri → Ghorepani (2,850 m)' },
+      { day: 3, title: 'Ulleri → Ghorepani (2,874 m)' },
       { day: 4, title: 'Pre-dawn hike to Poon Hill (3,210 m) for sunrise → Trek to Ghandruk (2,012 m)', note: 'Set off at ~5 am for the sunrise views' },
       { day: 5, title: 'Ghandruk → Nayapul → Drive to Pokhara (830 m)' },
     ],
@@ -257,6 +268,8 @@ export const TREK_DETAILS: TrekDetail[] = [
   {
     slug: 'korchan-khumai-dhada',
     image: '/images/trek-korchan-khumai-dhada.jpg',
+    imageAlt:
+      'Trekker on the Korchan ridge with Machhapuchhre (Fishtail) filling the skyline behind',
     name: 'Korchan / Khumai Dhada Hill',
     duration: '5 days',
     difficulty: 'Easy to Moderate',
@@ -290,18 +303,20 @@ export interface Trek {
   difficulty: string
   description: string
   image: string
+  imageAlt: string
 }
 
 // Each trek carries its own photo on TREK_DETAILS, so a card can never
 // silently fall back to an unrelated image.
 export const TREKS: Trek[] = TREK_DETAILS.map(
-  ({ slug, name, duration, difficulty, description, image }) => ({
+  ({ slug, name, duration, difficulty, description, image, imageAlt }) => ({
     slug,
     name,
     duration,
     difficulty,
     description,
     image,
+    imageAlt,
   })
 )
 

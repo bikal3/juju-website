@@ -7,12 +7,34 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Nav dark overlay — used by the scrolled state in Nav.tsx */
-.nav-scrolled {
-  background-color: rgba(20, 12, 5, 0.92);
+/* A visible focus ring on every interactive element. Inputs set
+   `focus:outline-none` for their own border treatment, so :focus-visible
+   restores an indicator that keyboard users can actually see. */
+:focus-visible {
+  outline: 2px solid theme('colors.gold');
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-/* Transition for nav background */
-nav {
-  transition: background-color 0.3s ease;
+/* Respect users who have asked their OS to reduce motion: drop the smooth
+   scrolling, card lifts, and image zooms rather than animating anyway. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hover\:-translate-y-1:hover,
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover {
+    transform: none !important;
+  }
 }

@@ -5,7 +5,7 @@ import { HOTEL_CONTACT, ROOMS } from '@/lib/data'
 import { buildWhatsAppInquiryUrl } from '@/lib/inquiry'
 
 const FIELD_CLASS =
-  'w-full border border-warm-tint bg-cream px-4 py-2 text-sm focus:outline-none focus:border-gold transition-colors'
+  'w-full border border-warm-tint bg-cream px-4 py-2 text-sm focus:border-gold focus:ring-2 focus:ring-gold/40 focus:outline-none transition-colors'
 const LABEL_CLASS =
   'block text-xs tracking-wide uppercase text-text-secondary mb-1'
 

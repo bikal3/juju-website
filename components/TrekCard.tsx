@@ -9,6 +9,7 @@ interface TrekCardProps {
   description: string
   slug: string
   image: string
+  imageAlt: string
 }
 
 const difficultyStyle: Record<string, string> = {
@@ -18,7 +19,7 @@ const difficultyStyle: Record<string, string> = {
   'Strenuous':             'bg-red-50 text-red-700 border border-red-200',
 }
 
-export default function TrekCard({ name, duration, difficulty, description, slug, image }: TrekCardProps) {
+export default function TrekCard({ name, duration, difficulty, description, slug, image, imageAlt }: TrekCardProps) {
   const diffClass = difficultyStyle[difficulty] ?? 'bg-warm-tint text-gold'
 
   return (
@@ -27,11 +28,10 @@ export default function TrekCard({ name, duration, difficulty, description, slug
       <div className="relative w-full aspect-[16/9] bg-card-placeholder">
         <Image
           src={imgSrc(image)}
-          alt={`${name} trek scenery`}
+          alt={imageAlt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
-          onError={undefined}
         />
         {/* Difficulty badge overlaid on photo */}
         <span className={`absolute top-3 left-3 text-xs tracking-widest uppercase font-medium px-2 py-1 ${diffClass}`}>
@@ -42,7 +42,7 @@ export default function TrekCard({ name, duration, difficulty, description, slug
       <div className="p-5 flex flex-col flex-1">
         <div className="flex justify-between items-start gap-3 mb-3">
           <h3 className="font-playfair text-lg font-normal leading-tight">{name}</h3>
-          <span className="bg-warm-tint text-gold text-xs px-2 py-1 tracking-wide whitespace-nowrap shrink-0">
+          <span className="bg-warm-tint text-gold-dark text-xs px-2 py-1 tracking-wide whitespace-nowrap shrink-0">
             {duration}
           </span>
         </div>

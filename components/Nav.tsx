@@ -46,9 +46,10 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
+              aria-current={pathname === href ? 'page' : undefined}
               className={`text-xs tracking-widest uppercase transition-colors ${
                 pathname === href
-                  ? 'text-gold border-b border-gold pb-0.5'
+                  ? 'text-gold-light border-b border-gold-light pb-0.5'
                   : 'text-cream/80 hover:text-cream'
               }`}
             >
@@ -101,9 +102,10 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
+              aria-current={pathname === href ? 'page' : undefined}
               onClick={() => setMenuOpen(false)}
               className={`text-xs tracking-widest uppercase ${
-                pathname === href ? 'text-gold' : 'text-cream/80'
+                pathname === href ? 'text-gold-light' : 'text-cream/80'
               }`}
             >
               {label}

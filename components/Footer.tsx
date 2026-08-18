@@ -62,7 +62,7 @@ export default function Footer() {
         </address>
       </div>
 
-      <div className="border-t border-cream/10 py-4 text-center text-xs tracking-wide text-cream/40">
+      <div className="border-t border-cream/10 py-4 text-center text-xs tracking-wide text-cream/60">
         © {new Date().getFullYear()} Hotel JuJu. All rights reserved.
       </div>
     </footer>

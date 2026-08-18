@@ -1,5 +1,6 @@
 // tailwind.config.ts
 import type { Config } from 'tailwindcss'
+import { palette } from './lib/palette'
 
 const config: Config = {
   content: [
@@ -8,15 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        cream: '#FAF7F2',
-        gold: '#8B6914',
-        'gold-light': '#C9A84C',
-        'warm-tint': '#F2EBE0',
-        'card-placeholder': '#D4C4A8',
-        'text-primary': '#2C2C2C',
-        'text-secondary': '#6B6B6B',
-      },
+      colors: palette,
       fontFamily: {
         playfair: ['var(--font-playfair)', 'Georgia', 'serif'],
         lato: ['var(--font-lato)', 'Helvetica Neue', 'sans-serif'],

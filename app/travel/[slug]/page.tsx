@@ -4,6 +4,7 @@ import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import { TREK_DETAILS, HIMALAYAN_VIEW_BOOK_URL } from '@/lib/data'
 import { pageSeo } from '@/lib/seo'
+import { trekBreadcrumbJsonLd } from '@/lib/structured-data'
 
 interface Props {
   params: { slug: string }
@@ -35,6 +36,11 @@ export default function TrekDetailPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(trekBreadcrumbJsonLd(trek)) }}
+      />
+
       {/* ── HERO ───────────────────────────────────────────────── */}
       <HeroSection
         height="medium"
@@ -42,7 +48,7 @@ export default function TrekDetailPage({ params }: Props) {
         title={trek.name}
         subtitle={`${trek.duration} · ${trek.difficulty} · Max ${trek.maxAltitude}`}
         imageSrc={trek.image}
-        imageAlt={`${trek.name} — Himalayan View trek from Pokhara`}
+        imageAlt={trek.imageAlt}
       />
 
       {/* ── BREADCRUMB ─────────────────────────────────────────── */}
@@ -72,7 +78,7 @@ export default function TrekDetailPage({ params }: Props) {
               { label: 'Starts from', value: 'Pokhara' },
             ].map(({ label, value }) => (
               <div key={label} className="bg-warm-tint rounded-sm px-5 py-4">
-                <p className="text-gold text-xs tracking-widest uppercase mb-1">{label}</p>
+                <p className="text-gold-dark text-xs tracking-widest uppercase mb-1">{label}</p>
                 <p className="font-playfair text-lg font-normal text-text-primary">{value}</p>
               </div>
             ))}
@@ -125,11 +131,11 @@ export default function TrekDetailPage({ params }: Props) {
 
       {/* ── BOOKING CTA ────────────────────────────────────────── */}
       <section className="bg-gold py-16 px-6 text-center" aria-label="Book this trek">
-        <p className="text-cream/80 text-xs tracking-[3px] uppercase mb-3">Ready to go?</p>
+        <p className="text-cream text-xs tracking-[3px] uppercase mb-3">Ready to go?</p>
         <h2 className="font-playfair text-3xl font-normal text-cream mb-4">
           Book {trek.name}
         </h2>
-        <p className="text-cream/80 text-sm mb-8 max-w-md mx-auto">
+        <p className="text-cream text-sm mb-8 max-w-md mx-auto">
           Organised by Himalayan View — our trusted Pokhara-based trekking partner.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">

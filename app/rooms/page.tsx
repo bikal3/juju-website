@@ -34,8 +34,9 @@ export default function RoomsPage() {
         {ROOMS.map((room, index) => (
           <section
             key={room.id}
+            id={room.id}
             aria-label={room.name}
-            className={`flex flex-col gap-10 items-center ${
+            className={`scroll-mt-24 flex flex-col gap-10 items-center ${
               index % 2 === 0
                 ? 'md:flex-row'
                 : 'md:flex-row-reverse'

@@ -64,6 +64,7 @@ export default function HomeContent() {
             {ROOMS.map((room) => (
               <RoomCard
                 key={room.id}
+                id={room.id}
                 name={room.name}
                 description={room.description}
                 amenities={room.amenities}
