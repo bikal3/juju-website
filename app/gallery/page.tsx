@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import { GALLERY_SECTIONS } from '@/lib/data'
-import { imgSrc } from '@/lib/base-path'
+import GalleryGrid from '@/components/GalleryGrid'
 import { pageSeo } from '@/lib/seo'
 
 export const metadata: Metadata = {
@@ -34,30 +33,7 @@ export default function GalleryPage() {
           <section key={section.title} aria-label={section.title}>
             <p className="text-gold text-xs tracking-[3px] uppercase mb-3">Hotel JuJu</p>
             <h2 className="font-playfair text-2xl font-normal mb-8">{section.title}</h2>
-            <div
-              className={`grid gap-4 ${
-                section.photos.length === 1
-                  ? 'grid-cols-1 max-w-lg'
-                  : section.photos.length === 2
-                  ? 'grid-cols-1 sm:grid-cols-2'
-                  : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
-              }`}
-            >
-              {section.photos.map((photo) => (
-                <div
-                  key={photo.src}
-                  className="relative aspect-[4/3] rounded-sm overflow-hidden bg-card-placeholder"
-                >
-                  <Image
-                    src={imgSrc(photo.src)}
-                    alt={photo.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
+            <GalleryGrid photos={section.photos} />
           </section>
         ))}
       </div>

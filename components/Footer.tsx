@@ -8,6 +8,7 @@ const FOOTER_LINKS = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/travel', label: 'Travel' },
   { href: '/contact', label: 'Contact' },
+  { href: '/privacy', label: 'Privacy' },
 ]
 
 export default function Footer() {

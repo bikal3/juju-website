@@ -7,7 +7,8 @@ const BASE = 'https://www.hoteljuju.com.np'
 describe('sitemap', () => {
   it('lists every public page', () => {
     const urls = sitemap().map((e) => e.url)
-    expect(urls).toHaveLength(5 + TREK_DETAILS.length)
+    // home, rooms, gallery, travel, contact, privacy
+    expect(urls).toHaveLength(6 + TREK_DETAILS.length)
   })
 
   it('uses trailing slashes so entries match the exported URLs', () => {
